@@ -1588,6 +1588,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1668188202801692, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1785479823}
+    - targetCorrespondingSourceObject: {fileID: 1668188202801692, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1785479828}
   m_SourcePrefab: {fileID: 100100000, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
 --- !u!4 &1050512825 stripped
 Transform:
@@ -1809,8 +1812,8 @@ GameObject:
   - component: {fileID: 1196528409}
   - component: {fileID: 1196528408}
   - component: {fileID: 1196528412}
-  m_Layer: 0
-  m_Name: Plane
+  m_Layer: 3
+  m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1900,7 +1903,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3.9131474, y: 1, z: 4.025314}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1307612326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1196528412
@@ -2009,6 +2013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307612326}
+  - component: {fileID: 1307612327}
   m_Layer: 0
   m_Name: Maze Walls
   m_TagString: Untagged
@@ -2024,9 +2029,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1307612325}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0810623, y: -10.688527, z: 15.28783}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7873617, y: -10.688527, z: 3.7979224}
+  m_LocalScale: {x: 0.25554878, y: 1, z: 0.24842782}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6543169839723361679}
@@ -2066,8 +2071,24 @@ Transform:
   - {fileID: 450830906}
   - {fileID: 1913073038}
   - {fileID: 607875952}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1196528411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1307612327
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307612325}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!4 &1340131897 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6434149969748985727, guid: 8c81f84bfc6df5b438871c23de4238c6, type: 3}
@@ -2713,6 +2734,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!195 &1785479828
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785479822}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!4 &1800623308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6434149969748985727, guid: 8c81f84bfc6df5b438871c23de4238c6, type: 3}
@@ -3130,4 +3173,3 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 1196528411}
   - {fileID: 1023201716}
-  - {fileID: 1307612326}

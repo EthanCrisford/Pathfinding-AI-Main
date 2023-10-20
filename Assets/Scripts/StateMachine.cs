@@ -17,6 +17,8 @@ public class StateMachine : MonoBehaviour
     {
         if (currentState != null)
             currentState.UpdateLogic();
+
+        print(currentState);
     }
 
     void LateUpdate()
@@ -42,7 +44,7 @@ public class StateMachine : MonoBehaviour
     {
         GUILayout.BeginArea(new Rect(10f, 10f, 200f, 100f));
         string content = currentState != null ? currentState.name : "(no current state)";
-        GUILayout.Label($"<color='black'><size=40>{content}</size></color>");
+        //GUILayout.Label($"<color='black'><size=40>{content}</size></color>");
         GUILayout.EndArea();
     }
 }

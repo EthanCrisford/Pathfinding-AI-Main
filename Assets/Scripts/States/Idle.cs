@@ -34,9 +34,10 @@ public class Idle : BaseState
         //if (Mathf.Abs(_horizontalInput) > Mathf.Epsilon)
         //stateMachine.ChangeState(sm.movingState);
 
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            stateMachine.ChangeState(sm.attackingState);
+            player.Init(player.attackingState);
         }
     }
 }

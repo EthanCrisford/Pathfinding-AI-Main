@@ -15,6 +15,9 @@ public class StateMachine : MonoBehaviour
     [HideInInspector]
     public Attacking attackingState;
 
+    public BaseState CurrentState { get; private set; }
+    public BaseState LastState { get; private set; }
+
     void Start()
     {
         currentState = GetInitialState();
@@ -50,7 +53,16 @@ public class StateMachine : MonoBehaviour
 
         currentState = newState;
         newState.Enter();
+
     }
+
+    public void Init(BaseState state)
+    {
+        CurrentState = state;
+        LastState = null;
+        state.Enter();
+    }
+
 
     private void OnGUI()
     {

@@ -24,6 +24,8 @@ public class MovementSM : StateMachine
         movingState = new Moving(this,sm);
         jumpingState = new Jumping(this,sm);
         attackingState = new Attacking(this,sm);
+
+        sm.Init(idleState);
     }
     protected override BaseState GetInitialState()
     {

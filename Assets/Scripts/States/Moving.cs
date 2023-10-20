@@ -6,15 +6,10 @@ public class Moving : BaseState
 
     protected MovementSM sm;
 
-    public Moving(MovementSM stateMachine) : base("Moving", stateMachine)
+    public Moving(MovementSM player, StateMachine sm) : base(player, sm)
     {
-        sm = (MovementSM)this.stateMachine;
+        //sm = (MovementSM)this.stateMachine;
 
-    }
-
-    public Moving(StateMachine stateMachine)
-    {
-        this.stateMachine = stateMachine;
     }
 
     public override void Enter()

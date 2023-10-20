@@ -9,14 +9,10 @@ public class Attacking : BaseState
 
     protected MovementSM sm;
 
-    public Attacking(MovementSM stateMachine) : base("Attacking", stateMachine)
-    {
-        sm = (MovementSM)this.stateMachine;
-    }
+    public Attacking(MovementSM player, StateMachine sm) : base(player, sm)
 
-    public Attacking(StateMachine stateMachine)
     {
-        this.stateMachine = stateMachine;
+        //sm = (MovementSM)this.stateMachine;
     }
 
     public override void Enter()

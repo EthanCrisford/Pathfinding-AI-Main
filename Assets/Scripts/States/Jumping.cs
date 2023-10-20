@@ -7,14 +7,9 @@ public class Jumping : BaseState
     private bool _grounded;
     //private int _groundLayer = 1 << 6;
 
-    public Jumping(MovementSM stateMachine) : base("Jumping", stateMachine)
+    public Jumping(MovementSM player, StateMachine sm) : base(player, sm)
     {
-        _sm = (MovementSM)this.stateMachine;
-    }
-
-    public Jumping(StateMachine stateMachine)
-    {
-        this.stateMachine = stateMachine;
+        //_sm = (MovementSM)this.stateMachine;
     }
 
     public override void Enter()

@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseState
+public class BaseState 
 {
-    public string name;
 
     protected StateMachine stateMachine;
+    protected MovementSM player;
     
-    public BaseState(string name, StateMachine stateMachine)
+    public BaseState(MovementSM player, StateMachine stateMachine)
     {
-        this.name = name;
+        this.player = player;
         this.stateMachine = stateMachine;
     }
 

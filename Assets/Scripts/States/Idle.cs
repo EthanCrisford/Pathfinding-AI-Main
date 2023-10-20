@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 
-public class Idle : Grounded
+public class Idle : BaseState
 {
     private float _horizontalInput;
 
-    public Idle (MovementSM stateMachine) : base("Idle", stateMachine) {}
-
-    public Idle(StateMachine stateMachine)
+    public Idle(MovementSM player, StateMachine sm) : base(player, sm)
     {
-        this.stateMachine = stateMachine;
+
     }
 
     public override void Enter()
@@ -16,6 +14,8 @@ public class Idle : Grounded
         base.Enter();
         //sm.spriteRenderer.color = Color.black;
         _horizontalInput = 0f;
+
+        Debug.Log("entering idle state");
     }
 
     public override void Exit()
@@ -26,10 +26,13 @@ public class Idle : Grounded
 
     public override void UpdateLogic()
     {
+        Debug.Log(Mathf.Epsilon);
         base.UpdateLogic();
-        _horizontalInput = Input.GetAxis("Horizontal");
-        if (Mathf.Abs(_horizontalInput) > Mathf.Epsilon)
-            stateMachine.ChangeState(sm.movingState);
+
+        //base.MovePlayer();
+
+        //if (Mathf.Abs(_horizontalInput) > Mathf.Epsilon)
+        //stateMachine.ChangeState(sm.movingState);
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {

@@ -4,9 +4,9 @@ public class Grounded : BaseState
 {
     protected MovementSM sm;
 
-    public Grounded(string name, MovementSM stateMachine) : base(name, stateMachine)
+    public Grounded(MovementSM player, StateMachine sm) : base(player, sm)
     {
-        sm = (MovementSM) this.stateMachine;
+        //sm = (MovementSM) this.stateMachine;
     }
 
     public override void UpdateLogic()

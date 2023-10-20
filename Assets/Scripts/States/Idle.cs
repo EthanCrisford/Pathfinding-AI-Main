@@ -9,7 +9,7 @@ public class Idle : Grounded
     public override void Enter()
     {
         base.Enter();
-        sm.spriteRenderer.color = Color.black;
+        //sm.spriteRenderer.color = Color.black;
         _horizontalInput = 0f;
     }
 

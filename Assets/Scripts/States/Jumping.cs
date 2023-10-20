@@ -5,7 +5,7 @@ public class Jumping : BaseState
     private MovementSM _sm;
 
     private bool _grounded;
-    private int _groundLayer = 1 << 6;
+    //private int _groundLayer = 1 << 6;
 
     public Jumping(MovementSM stateMachine) : base("Jumping", stateMachine)
     {
@@ -15,7 +15,7 @@ public class Jumping : BaseState
     public override void Enter()
     {
         base.Enter();
-        _sm.spriteRenderer.color = Color.green;
+        //_sm.spriteRenderer.color = Color.green;
 
         Vector2 vel = _sm.rigidbody.velocity;
         vel.y += _sm.jumpForce;
@@ -32,7 +32,7 @@ public class Jumping : BaseState
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();
-        _grounded = _sm.rigidbody.velocity.y < Mathf.Epsilon && _sm.rigidbody.IsTouchingLayers(_groundLayer);
+        //_grounded = _sm.rigidbody.velocity.y < Mathf.Epsilon && _sm.rigidbody.IsTouchingLayers(_groundLayer);
     }
 
 }

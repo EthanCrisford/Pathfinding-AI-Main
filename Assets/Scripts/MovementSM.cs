@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MovementSM : StateMachine
 {
-    public float speed = 4f;
-    public float jumpForce = 14f;
-    public Rigidbody2D rigidbody;
-    public SpriteRenderer spriteRenderer;
+    public float speed;
+    public float jumpForce;
+    public new Rigidbody rigidbody;
+    private float dirX, dirZ;
 
     [HideInInspector]
     public Idle idleState;
@@ -23,11 +23,24 @@ public class MovementSM : StateMachine
         idleState = new Idle(this);
         movingState = new Moving(this);
         jumpingState = new Jumping(this);
-        attackingState = new Attacking(this);   
+        attackingState = new Attacking(this);
+
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     protected override BaseState GetInitialState()
     {
         return idleState;
+    }
+
+    private void Update()
+    {
+        dirX = Input.GetAxis("Horizzontal") * speed;
+        dirZ = Input.GetAxis("Vertical") * speed;
+    }
+
+    public void FixedUpdate()
+    {
+        rigidbody.velocity = new Vector3 (dirX, rigidbody.velocity.y, dirZ);
     }
 }

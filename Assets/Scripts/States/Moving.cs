@@ -15,7 +15,7 @@ public class Moving : BaseState
     public override void Enter()
     {
         base.Enter();
-        sm.spriteRenderer.color = Color.red;
+        //sm.spriteRenderer.color = Color.red;
         _horizontalInput = 0f;
     }
 

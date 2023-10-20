@@ -17,7 +17,7 @@ public class Attacking : BaseState
     public override void Enter()
     {
         base.Enter();
-        sm.spriteRenderer.color = Color.blue;
+        //sm.spriteRenderer.color = Color.blue;
 
         idleTimer = 1f;
 

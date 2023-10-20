@@ -9,22 +9,8 @@ public class MovementSM : StateMachine
     public new Rigidbody rigidbody;
     private float dirX, dirZ;
 
-    [HideInInspector]
-    public Idle idleState;
-    [HideInInspector]
-    public Moving movingState;
-    [HideInInspector]
-    public Jumping jumpingState;
-    [HideInInspector]
-    public Attacking attackingState;
-
     private void Awake()
     {
-        idleState = new Idle(this);
-        movingState = new Moving(this);
-        jumpingState = new Jumping(this);
-        attackingState = new Attacking(this);
-
         rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -35,7 +21,7 @@ public class MovementSM : StateMachine
 
     private void Update()
     {
-        dirX = Input.GetAxis("Horizzontal") * speed;
+        dirX = Input.GetAxis("Horizontal") * speed;
         dirZ = Input.GetAxis("Vertical") * speed;
     }
 

@@ -12,6 +12,11 @@ public class Jumping : BaseState
         _sm = (MovementSM)this.stateMachine;
     }
 
+    public Jumping(StateMachine stateMachine)
+    {
+        this.stateMachine = stateMachine;
+    }
+
     public override void Enter()
     {
         base.Enter();

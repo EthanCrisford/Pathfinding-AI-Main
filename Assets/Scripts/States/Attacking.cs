@@ -14,6 +14,11 @@ public class Attacking : BaseState
         sm = (MovementSM)this.stateMachine;
     }
 
+    public Attacking(StateMachine stateMachine)
+    {
+        this.stateMachine = stateMachine;
+    }
+
     public override void Enter()
     {
         base.Enter();

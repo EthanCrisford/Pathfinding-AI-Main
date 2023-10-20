@@ -1,26 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Pathfinding : MonoBehaviour
+public class Pathfinding : StateMachine
 {
     public Transform[] points;
 
     private NavMeshAgent nav;
     private int destPoint;
     public Animator anim;
+    public GameObject player;
 
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
     }
-
+   
     void FixedUpdate()
     {
-        if (!nav.pathPending && nav.remainingDistance < 0.5f)
-            GoToNextPoint();
+        nav.destination = player.transform.position;
     }
 
     void Update()
@@ -29,15 +27,5 @@ public class Pathfinding : MonoBehaviour
         {
             anim.SetBool("Walk", true);
         }
-    }
-
-    void GoToNextPoint()
-    {
-        if (points.Length == 0)
-        {
-            return;
-        }
-        nav.destination = points[destPoint].position;
-        destPoint = (destPoint + 1) % points.Length;
     }
 }

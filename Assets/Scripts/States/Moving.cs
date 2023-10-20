@@ -12,6 +12,11 @@ public class Moving : BaseState
 
     }
 
+    public Moving(StateMachine stateMachine)
+    {
+        this.stateMachine = stateMachine;
+    }
+
     public override void Enter()
     {
         base.Enter();

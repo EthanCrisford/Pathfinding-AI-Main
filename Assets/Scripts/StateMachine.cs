@@ -6,11 +6,28 @@ public class StateMachine : MonoBehaviour
 {
     BaseState currentState;
 
+    [HideInInspector]
+    public Idle idleState;
+    [HideInInspector]
+    public Moving movingState;
+    [HideInInspector]
+    public Jumping jumpingState;
+    [HideInInspector]
+    public Attacking attackingState;
+
     void Start()
     {
         currentState = GetInitialState();
         if (currentState != null)
             currentState.Enter();
+    }
+
+    private void Awake()
+    {
+        idleState = new Idle(this);
+        movingState = new Moving(this);
+        jumpingState = new Jumping(this);
+        attackingState = new Attacking(this);
     }
 
     void Update()

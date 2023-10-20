@@ -6,6 +6,11 @@ public class Idle : Grounded
 
     public Idle (MovementSM stateMachine) : base("Idle", stateMachine) {}
 
+    public Idle(StateMachine stateMachine)
+    {
+        this.stateMachine = stateMachine;
+    }
+
     public override void Enter()
     {
         base.Enter();

@@ -1536,6 +1536,7 @@ MonoBehaviour:
   speed: 3
   jumpForce: 0
   rigidbody: {fileID: 859886967}
+  sm: {fileID: 0}
 --- !u!4 &859886969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0285f3b674d6e274687efbde937c5409, type: 3}
@@ -3880,6 +3881,7 @@ MonoBehaviour:
   points:
   - {fileID: 859886969}
   anim: {fileID: 0}
+  player: {fileID: 859886965}
 --- !u!4 &1800623308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6434149969748985727, guid: 8c81f84bfc6df5b438871c23de4238c6, type: 3}

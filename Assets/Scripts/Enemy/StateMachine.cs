@@ -20,13 +20,17 @@ public class StateMachine : MonoBehaviour
 
     // debug text
     public string text;
-    private NavMeshAgent nav;
+    [HideInInspector]
+    public NavMeshAgent nav;
     private int destPoint;
     public Animator anim;
     public GameObject player;
 
     private void Start()
     {
+        nav = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+
         text = "";  // clear debug text
 
         rb = GetComponent<Rigidbody>();
@@ -34,9 +38,6 @@ public class StateMachine : MonoBehaviour
         lastState = null;
         // this is the inital state
         ChangeState(idleState);
-
-        nav = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
     }
 
     public void Update()

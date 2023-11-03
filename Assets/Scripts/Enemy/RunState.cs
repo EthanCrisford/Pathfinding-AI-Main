@@ -6,7 +6,6 @@ public class RunState : IState
     float timer = 0;
     float xVelocity = 1;
     StateMachine sm;
-    private NavMeshAgent nav;
 
     public void OnEnterState(StateMachine stateMachine)
     {
@@ -28,7 +27,7 @@ public class RunState : IState
     public void FixedUpdateState()
     {
         // Physics update
-        nav.destination = sm.player.transform.position;
+        sm.nav.destination = sm.player.transform.position;
     }
 
     public void OnExitState()

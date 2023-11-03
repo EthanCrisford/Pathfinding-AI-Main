@@ -21,7 +21,11 @@ public class Player : MonoBehaviour
         vertical = Input.GetAxis("Vertical");
 
         moveDir = transform.forward * vertical + transform.right * horizontal;
+        moveDir.Normalize();
+
+        //transform.LookAt(moveDir);
 
         characterController.Move(moveDir * speed);
+        transform.Translate(moveDir * speed * Time.deltaTime);
     }
 }
